@@ -1,0 +1,14 @@
+span {
+    text-align: center;
+    font-size: xx-large;
+    font-family: cursive;
+    width: 100%;
+}
+img {
+    width: 50%;
+    margin-left: 25%;
+}
+#message-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-1">
+        <createTable tableName="catalog_url">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="domain_fk" type="CHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="NULL" name="last_page" type="MEDIUMTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-2">
+        <createTable tableName="domain">
+            <column name="name" type="CHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-3">
+        <createTable tableName="price">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueComputed="NULL" name="price" type="FLOAT(12)"/>
+            <column name="product_fk" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-4">
+        <createTable tableName="product">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="domain_fk" type="CHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-5">
+        <addPrimaryKey columnNames="id" tableName="catalog_url"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-6">
+        <addPrimaryKey columnNames="name" tableName="domain"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-7">
+        <addPrimaryKey columnNames="id" tableName="price"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-8">
+        <addPrimaryKey columnNames="id" tableName="product"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-9">
+        <addUniqueConstraint columnNames="name" constraintName="name" tableName="domain"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-10">
+        <createIndex indexName="catalog_url_domain_fk" tableName="catalog_url">
+            <column name="domain_fk"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-11">
+        <createIndex indexName="product_domain_fk" tableName="product">
+            <column name="domain_fk"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-12">
+        <createIndex indexName="price_product_fk" tableName="price">
+            <column name="product_fk"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-13">
+        <addForeignKeyConstraint baseColumnNames="domain_fk" baseTableName="catalog_url" constraintName="catalog_url_ibfk_1" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="name" referencedTableName="domain"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-14">
+        <addForeignKeyConstraint baseColumnNames="product_fk" baseTableName="price" constraintName="price_ibfk_1" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="product"/>
+    </changeSet>
+    <changeSet author="vkolodynsky (generated)" id="1586512224203-15">
+        <addForeignKeyConstraint baseColumnNames="domain_fk" baseTableName="product" constraintName="product_ibfk_1" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="name" referencedTableName="domain"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,107 @@
+.chart-container, body {
+  min-width: 500px;
+  min-height: 300px;
+}
+button:focus{
+  outline: none;
+}
+
+.button-container {
+  flex-direction: row;
+}
+
+.inner-form, .chart, .button-container {
+  margin-bottom: 16px;
+}
+
+.button-container > button
+{
+  width: 100%;
+  background-color: white;
+  border: none;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 34px;
+  padding: 5px;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+}
+
+.chart-container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.label {
+  text-align: center;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  font-size: xx-large;
+  color: silver;
+}
+.loaded {
+  display: none;
+  opacity: 0;
+}
+#bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#subscribe {
+  width: 30px;
+  top: 30px;
+  right: 30px;
+  position: absolute;
+  cursor: pointer;
+}
+#subscribe-bar {
+  top: 25px;
+  right: 25px;
+  position: absolute;
+}
+.subscription-form {
+  overflow: hidden;
+  width: 500px;
+  display: flex;
+  flex-flow: column;
+}
+.subscription-form-buttons {
+  display: flex;
+  flex-flow: row;
+}
+input {
+  outline: none;
+  flex-grow: 1;
+  height: 25px;
+}
+.spacer {
+  width: 5px;
+}
+.text.input {
+  margin-bottom: 5px;
+  min-width: 125px;
+  border: 1px solid #eee;
+  border-left: 3px solid;
+  border-radius: 5px;
+  transition: border-color .5s ease-out;
+}
+.text.input:optional {
+  border-left-color: #999;
+}
+.text.input:required {
+  border-left-color: palegreen;
+}
+.text.input:invalid {
+  border-left-color: salmon;
+}
+
+

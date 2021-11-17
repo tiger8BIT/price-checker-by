@@ -1,0 +1,1 @@
+INSERT INTO public.email (id, email, is_confirm) VALUES (205962, 'kolodynskiy.vyacheslav@gmail.com', true);
