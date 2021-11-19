@@ -40,7 +40,7 @@ supported by Chrome, Opera, Yandex Browser
 
 Open server/.env file and check of ```CHROMEDRIVER_DOWNLOAD_LINK``` and ```CHROME_DOWNLOAD_LINK``` properties are still relevant. You can find relevant links on [Chromedriver](https://chromedriver.storage.googleapis.com/index.html) and [Chrome](http://170.210.201.179/linux/chrome/deb/pool/main/g/google-chrome-stable/).
 
-Also, relace properties ```MAIL_USERNAME``` and ```MAIL_PASSWORD``` used by SMTP.
+Also, replace ```MAIL_USERNAME``` and ```MAIL_PASSWORD``` properties values used by SMTP.
 
 Then just run ```docker-compose --env-file ".env" up -d```.
 
@@ -60,7 +60,7 @@ compress chrome-extension into a zip archive and install it to your browser.
 You can easily add a new website parser.
 
 1. Define [WebSiteParser](../main/server/src/main/java/pricecheckerby/parser/parsers/WebSiteParser.java) interface realization.
-1. Add domain data into the ```domain``` table. Add catalog links into the ```catalog_url``` table
+1. Add domain data into the ```domain``` table. Add catalog links into the ```catalog_url``` table.
 
 ## Database scheme
 
