@@ -10,8 +10,7 @@ import pricecheckerby.model.Domain;
 public class OzParser implements WebSiteParser {
     private final By goodsSelector = By.className("item-type-card");
     private final By nextSelector = By.cssSelector(".pg-next:not(.disabled)");
-    @Value("${name.oz}")
-    private String webSiteName;
+    private final String webSiteName = "oz";
 
     @Override
     public String getWebSiteName() {

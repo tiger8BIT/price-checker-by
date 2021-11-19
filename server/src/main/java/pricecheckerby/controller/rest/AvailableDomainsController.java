@@ -26,8 +26,6 @@ import java.util.stream.Collectors;
 public class AvailableDomainsController {
     @Autowired
     private DomainService domainService;
-    @Value("${name.wildberries}")
-    private String wildberries;
 
     @CrossOrigin
     @GetMapping("/domains/url")

@@ -12,8 +12,8 @@ import pricecheckerby.model.Domain;
 public class WildberriesParser implements WebSiteParser {
     private final By goodsSelector = By.className("product-card__main");
     private final By nextSelector = By.className("pagination__next");
-    @Value("${name.wildberries}")
-    private String webSiteName;
+    private final String webSiteName = "wildberries";
+
     @Override
     public String getWebSiteName() {
         return webSiteName;

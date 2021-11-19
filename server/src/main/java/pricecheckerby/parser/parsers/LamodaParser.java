@@ -10,8 +10,7 @@ import pricecheckerby.model.Domain;
 public class LamodaParser implements WebSiteParser {
     private final By goodsSelector = By.className("products-list-item");
     private final By nextSelector = By.cssSelector(".paginator__next:not([style])");
-    @Value("${name.lamoda}")
-    private String webSiteName;
+    private final String webSiteName = "lamoda";
     @Override
     public String getWebSiteName() {
         return webSiteName;

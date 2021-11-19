@@ -12,8 +12,7 @@ import pricecheckerby.model.Domain;
 public class VekParser implements WebSiteParser {
     private final By goodsSelector = By.className("result__item");
     private final By nextSelector = By.cssSelector("a[rel=\"next\"]");
-    @Value("${name.21vek}")
-    private String webSiteName;
+    private final String webSiteName = "21vek";
     @Override
     public String getWebSiteName() {
         return webSiteName;
