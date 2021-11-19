@@ -90,4 +90,7 @@
     <changeSet author="vkolodynsky (generated)" id="1586512224203-15">
         <addForeignKeyConstraint baseColumnNames="domain_fk" baseTableName="product" constraintName="product_ibfk_1" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="name" referencedTableName="domain"/>
     </changeSet>
+    <changeSet author="vkolodynsky" id="1586512224203-16">
+        <sqlFile path="data.sql" />
+    </changeSet>
 </databaseChangeLog>

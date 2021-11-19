@@ -3,11 +3,9 @@ package pricecheckerby.parser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
-import pricecheckerby.parser.parsers.VekParser;
 import pricecheckerby.parser.parsers.WebSiteParser;
 import pricecheckerby.parser.service.CatalogParserService;
 
-import java.util.List;
 import java.util.Map;
 
 @Service
