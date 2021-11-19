@@ -10,8 +10,8 @@ import pricecheckerby.model.Domain;
 @Slf4j
 @Service
 public class WildberriesParser implements WebSiteParser {
-    private final By goodsSelector = By.className("ref_goods_n_p");
-    private final By nextSelector = By.className("next");
+    private final By goodsSelector = By.className("product-card__main");
+    private final By nextSelector = By.className("pagination__next");
     @Value("${name.wildberries}")
     private String webSiteName;
     @Override
@@ -28,9 +28,11 @@ public class WildberriesParser implements WebSiteParser {
     }
     @Override
     public float parsePrice(WebElement element) throws NumberFormatException{
-        String priceS = element.findElement(By.className("lower-price")).getText();
+        String priceS = element.findElement(By.className("price-localized")).getText();
         priceS = priceS.replace("р.", ".");
         priceS = priceS.replace("к.", "");
+        priceS = priceS.replace("(", "");
+        priceS = priceS.replace(")", "");
         priceS = priceS.replace(" ", "");
         float priceF;
         priceF = Float.parseFloat(priceS);
