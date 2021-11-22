@@ -1,6 +1,6 @@
 # PriceCheckerBy 
 
-PriceCheckerBy monitors price changes for products on Belarusian online stores.
+PriceCheckerBy monitors price changes for products in Belarusian online stores.
 
 Functions:
 
@@ -53,14 +53,14 @@ open web-page/index.html.
 
 #### Extension 
 
-compress chrome-extension into a zip archive and install it to your browser.
+compress chrome-extension into a zip archive and install it on your browser.
 
 ## How to add a new store parser
 
 You can easily add a new website parser.
 
 1. Define [WebSiteParser](../main/server/src/main/java/pricecheckerby/parser/parsers/WebSiteParser.java) interface realization.
-1. Add domain data into the ```domain``` table. Add catalog links into the ```catalog_url``` table.
+1. Add domain data to the ```domain``` table. Add catalog links to the ```catalog_url``` table.
 
 ## Database scheme
 
