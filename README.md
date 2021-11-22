@@ -1,4 +1,4 @@
-# PriceChecker 
+# PriceCheckerBy 
 
 PriceCheckerBy monitors price changes for products on Belarusian online stores.
 
